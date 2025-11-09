@@ -1,15 +1,12 @@
-FROM container-registry.oracle.com/graalvm/jdk:24
+FROM container-registry.oracle.com/graalvm/jdk:24-ol9
 
 LABEL author="faiz"
 
-RUN         useradd -m -d /home/container -s /bin/bash container
-USER        container
-ENV         USER=container HOME=/home/container
-WORKDIR     /home/container
+RUN useradd -d /home/container -m container
 
-STOPSIGNAL SIGINT
+USER container
+ENV USER=container HOME=/home/container
+WORKDIR /home/container
 
-COPY        --chown=container:container ../../entrypoint.sh /entrypoint.sh
-RUN         chmod +x /entrypoint.sh
-ENTRYPOINT    ["/usr/bin/tini", "-g", "--"]
-CMD         ["/entrypoint.sh"]
+COPY ../../entrypoint.sh /entrypoint.sh
+CMD [ "/bin/bash", "/entrypoint.sh" ]
