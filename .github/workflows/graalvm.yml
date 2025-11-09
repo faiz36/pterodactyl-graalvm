@@ -42,4 +42,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/sersoid/pterodactyl-graalvm:${{ matrix.tag.PREFIX }}-${{ matrix.tag.IMAGE }}
+            ghcr.io/faiz/pterodactyl-graalvm:${{ matrix.tag.PREFIX }}-${{ matrix.tag.IMAGE }}
