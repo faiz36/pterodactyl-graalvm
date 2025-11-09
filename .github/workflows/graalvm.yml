@@ -25,6 +25,7 @@ jobs:
           - { CONTEXT: "./ee", PREFIX: "jdk-ee", IMAGE: "21" }
           - { CONTEXT: "./ee", PREFIX: "jdk-ee", IMAGE: "22" }
           - { CONTEXT: "./ee", PREFIX: "jdk-ee", IMAGE: "23" }
+          - { CONTEXT: "./ee", PREFIX: "jdk-ee", IMAGE: "24" }
     steps:
       - uses: actions/checkout@v3
       - uses: docker/setup-qemu-action@v2
