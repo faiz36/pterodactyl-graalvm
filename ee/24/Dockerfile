@@ -1,4 +1,4 @@
-FROM container-registry.oracle.com/graalvm/jdk:24-ol9
+FROM container-registry.oracle.com/graalvm/jdk:24
 
 LABEL author="faiz"
 
